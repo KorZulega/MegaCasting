@@ -54,11 +54,11 @@ namespace MegaCasting.Client
             switch (userChoice)
             {
 
-                
+
 
                 case "1":
 
-
+                    AddProducer();
 
 
                     break;
@@ -70,7 +70,7 @@ namespace MegaCasting.Client
                     break;
                 case "3":
 
-
+                    ListProducers();
 
 
                     break;
@@ -106,6 +106,99 @@ namespace MegaCasting.Client
             megaCastingEntities.Producers.Add(producer);
             //On push les modifications en base de données
             megaCastingEntities.SaveChanges();
+        }
+
+        public static void EditProducer()
+        {
+            List<Producer> producers = megaCastingEntities.Producers.ToList();
+
+            Console.WriteLine("Choisissez un producteur à modifier");
+
+            producers.ForEach(producer => Console.WriteLine(producer.Identifier + " - " + producer.Name));
+
+            string choice = Console.ReadLine();
+
+            int isInteger = 0;
+
+
+            if (int.TryParse(choice, out isInteger))
+            {
+
+                if(megaCastingEntities.Producers.Any(producer => producer.Identifier == isInteger))
+                {
+                    Producer producer = megaCastingEntities.Producers.First(producer1 => producer1.Identifier == isInteger);
+
+
+                    Console.WriteLine("Donnez un nouveau nom à : " + producer);
+
+                    string modifier = Console.ReadLine();
+
+                    producer.Name = modifier;
+
+
+                    megaCastingEntities.SaveChanges();
+
+                    Console.WriteLine("Le nouveau nom est bien" + modifier);
+
+                }
+
+                else
+                {
+                    Console.WriteLine("Impossible de trouver le producteur correspondant à l'ID demandé");
+                }
+
+            }
+
+        }
+
+
+        public static void ListProducers()
+        {
+            //Récupération de la liste des producteurs
+            List<Producer> producers = megaCastingEntities.Producers.ToList();
+            //Affichage de la liste des producteurs de la base de données
+            producers.ForEach(producer => Console.WriteLine(producer.Identifier + " - " + producer.Name));
+
+            //Demande de suppresion éventuelle ?
+
+            Console.WriteLine("Souhaitez-vous supprimer un producteur ? Entrez l'ID correspondant");
+
+            producers.ForEach(producer => Console.WriteLine(producer.Identifier + " - " + producer.Name));
+
+            string choice = Console.ReadLine();
+
+            int isInteger = 0;
+
+            if (int.TryParse(choice, out isInteger))
+            {
+                //Méthode alternative
+                //Producer producer1 = megaCastingEntities.Producers.FirstOrDefault((producer => producer.Identifier == isInteger));
+
+                //if(producer1 != null)
+                //{
+
+                //}
+
+                //On vérifie que le producteur choisi exsite
+                if (megaCastingEntities.Producers.Any(producer => producer.Identifier == isInteger))
+                {
+                    //Suppresson si VRAI
+                    Producer producer = megaCastingEntities.Producers.First(producerTemp => producerTemp.Identifier == isInteger);
+
+                    megaCastingEntities.Producers.Remove(producer);
+
+                    //Validation de la supprssion
+                    megaCastingEntities.SaveChanges();
+
+                    //Retour confirmation
+                    Console.WriteLine("Le producteur sélectionné a bien été supprimé");
+                }
+                else
+                {
+                    //Retour erreur si FAUX
+                    Console.WriteLine("Aucun producteur n'a été trouve à cet ID");
+                }
+            }
         }
 
         #endregion
