@@ -42,42 +42,48 @@ namespace MegaCasting.Client
         /// <param name="args">arguements passés en paramètre</param>
         static void Main(string[] args)
         {
-            Console.WriteLine(
+            
+            string userChoice = "";
+            do
+            {
+                Console.WriteLine(
                 "---MegaCasting---" + Environment.NewLine
                 + "1 - Ajout d'un producteur" + Environment.NewLine
                 + "2 - Modification d'un producteur" + Environment.NewLine
                 + "3 - Suppression d'un producteur"
 
                 );
-            string userChoice = Console.ReadLine();
-
-            switch (userChoice)
-            {
-
-
-
-                case "1":
-
-                    AddProducer();
-
-
-                    break;
-                case "2":
+                userChoice = Console.ReadLine();
+                switch (userChoice)
+                {
 
 
 
+                    case "1":
 
-                    break;
-                case "3":
-
-                    ListProducers();
+                        AddProducer();
 
 
-                    break;
+                        break;
+                    case "2":
 
-                default:
-                    break;
+
+                        EditProducer();
+
+                        break;
+                    case "3":
+
+                        ListProducers();
+
+
+                        break;
+
+                    default:
+                        break;
+                }
             }
+            while (userChoice != "0");
+            
             ////Intanciation du contexte
             //MegaCastingEntities entities = new MegaCastingEntities();
 
@@ -129,7 +135,7 @@ namespace MegaCasting.Client
                     Producer producer = megaCastingEntities.Producers.First(producer1 => producer1.Identifier == isInteger);
 
 
-                    Console.WriteLine("Donnez un nouveau nom à : " + producer);
+                    Console.WriteLine("Donnez un nouveau nom à : " + producer.Name);
 
                     string modifier = Console.ReadLine();
 
