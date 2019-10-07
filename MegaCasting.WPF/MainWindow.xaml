@@ -14,7 +14,7 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
 
     <Grid>
@@ -38,7 +38,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="MediumPurple">
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#363636">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="buttonExit"
                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
@@ -68,19 +68,21 @@
             
         </Menu>-->
 
-        <Grid Grid.Row="1" Grid.Column="0" Background="Purple">
+        <Grid Grid.Row="1" Grid.Column="0" Background="#363636">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Mega Casting" Background="MediumPurple" FontFamily="Visitor TT1 BRK" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Background="#1DB954" Grid.Row="0" Text="Mega Casting"  FontFamily="Visitor TT1 BRK" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
 
-            <Button Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
+            <Button Background="#1DB954" Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
                     <Grid Width="150">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"></ColumnDefinition>
@@ -93,7 +95,7 @@
 
                     </Grid>
                 </Button>
-            <Button Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5">
+            <Button Background="#1DB954" Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5" Click="AnnonceBoutton_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -106,7 +108,7 @@
 
                 </Grid>
             </Button>
-            <Button Grid.Row="3" x:Name="offresBoutton" Margin="0,2.5,0,2.5">
+            <Button Background="#1DB954" Grid.Row="3" x:Name="offresBoutton" Margin="0,2.5,0,2.5">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -120,9 +122,23 @@
                 </Grid>
             </Button>
 
+            <Button Background="Gray" Grid.Row="5" x:Name="settingsBoutton" Margin="0,2.5,0,2.5">
+                <Grid Width="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Gear"/>
+
+                    <Label Grid.Column="1" Content="Options"></Label>
+
+                </Grid>
+            </Button>
+
         </Grid>
 
-        <DockPanel x:Name="dockPanelMain" Grid.Row="1" Grid.Column="1" >
+        <DockPanel Background="#363636" x:Name="dockPanelMain" Grid.Row="1" Grid.Column="1" >
             <views:ViewMain VerticalAlignment="Center" HorizontalAlignment="Center">
 
             </views:ViewMain>

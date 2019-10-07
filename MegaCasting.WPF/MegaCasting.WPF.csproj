@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\AnnouncementView.xaml.cs">
+      <DependentUpon>AnnouncementView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewAnnouncer.xaml.cs">
       <DependentUpon>ViewAnnouncer.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AnnouncementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewAnnouncer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

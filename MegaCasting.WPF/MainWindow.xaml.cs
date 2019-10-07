@@ -43,6 +43,13 @@ namespace MegaCasting.WPF
         {
             this.dockPanelMain.Children.Clear();
         }
+
+        private void AnnonceBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            AnnouncementView announcementView = new AnnouncementView();
+            this.dockPanelMain.Children.Add(announcementView);
+        }
     }
 
     
