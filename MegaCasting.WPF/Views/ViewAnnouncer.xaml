@@ -40,6 +40,24 @@
 
             </Grid>
         </Button>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Nom"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Nb Offres disponibles"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Ajouter offres"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Identifiant"/>
+            <Label Grid.Column="0" Grid.Row="4" Content="Mot de passe"/>
+        </Grid>
     </Grid>
 
 </UserControl>
