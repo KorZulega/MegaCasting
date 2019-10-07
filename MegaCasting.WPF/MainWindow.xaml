@@ -12,8 +12,26 @@
             <RowDefinition Height= "20pt"></RowDefinition>
             <RowDefinition Height= "*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Menu Grid.Row="0" >
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="Aqua">
+                <StackPanel
+            </Grid>
+        </Grid>
+
+        <!--<Menu Grid.Row="0">
             <MenuItem Header="Fichier">
                 <MenuItem Header="Annonceurs"></MenuItem>
                 <MenuItem Header="Offres"></MenuItem>
@@ -23,10 +41,10 @@
             <MenuItem x:Name="menuItemOffres" Header="Gestion des offres"/>
             <MenuItem x:Name="menuItemTypeContrat" Header="Gestion des type de contrat"/>
             
-        </Menu>
+        </Menu>-->
 
         <DockPanel Grid.Row="1">
-            <views:ViewMain>
+            <views:ViewMain VerticalAlignment="Center" HorizontalAlignment="Center">
                 
             </views:ViewMain>
         </DockPanel>
