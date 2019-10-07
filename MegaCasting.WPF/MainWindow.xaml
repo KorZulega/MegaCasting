@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="Aqua">
-                <StackPanel
+                
             </Grid>
         </Grid>
 
