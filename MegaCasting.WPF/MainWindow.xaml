@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:MegaCasting.WPF"
         xmlns:views="clr-namespace:MegaCasting.WPF.Views"       
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height= "20pt"></RowDefinition>
@@ -17,7 +27,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="2">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -27,7 +37,16 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="Aqua">
-                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="buttonExit"
+                            Foreground = "White"
+                            Width="25" 
+                            Height="25" 
+                            HorizontalAlignment="Center" 
+                            Click="ButtonExit_Click">
+                        <materialDesign:PackIcon Kind="ExitRun"/>
+                    </Button>
+                </StackPanel>
             </Grid>
         </Grid>
 
