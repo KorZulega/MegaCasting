@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaCasting.Client", "MegaCasting.Client\MegaCasting.Client.csproj", "{44899F74-A47B-469C-9A81-F96DFCE2A313}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaCasting.DBLib", "MegaCasting.DBLib\MegaCasting.DBLib.csproj", "{4441B39D-2A00-4975-8F97-E60511FBDD0F}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MegaCasting.DB", "MegaCasting.DB\MegaCasting.DB.sqlproj", "{11CCD502-2AC4-4316-8DC8-4CC02D8D0A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaCasting.WPF", "MegaCasting.WPF\MegaCasting.WPF.csproj", "{8DE954BD-3D0F-42CA-A86E-46EF005242C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{11CCD502-2AC4-4316-8DC8-4CC02D8D0A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11CCD502-2AC4-4316-8DC8-4CC02D8D0A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11CCD502-2AC4-4316-8DC8-4CC02D8D0A0B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8DE954BD-3D0F-42CA-A86E-46EF005242C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE954BD-3D0F-42CA-A86E-46EF005242C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE954BD-3D0F-42CA-A86E-46EF005242C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE954BD-3D0F-42CA-A86E-46EF005242C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MegaCasting.DBLib;
+using System.Web;
 
 namespace MegaCasting.Client
 {
@@ -107,7 +108,8 @@ namespace MegaCasting.Client
 
             producer.Name = Console.ReadLine();
             Console.WriteLine("Un mot de passe par défaut va être affecté");
-            producer.Password = " "; //TODO : Générer un mdp aléatoire
+            producer.Password = CreateRandomPassword(10); //TODO : Générer un mdp aléatoire
+            Console.WriteLine(producer.Password);
             //On ajoute le producteur à la liste
             megaCastingEntities.Producers.Add(producer);
             //On push les modifications en base de données
@@ -205,6 +207,17 @@ namespace MegaCasting.Client
                     Console.WriteLine("Aucun producteur n'a été trouve à cet ID");
                 }
             }
+        }
+        public static string CreateRandomPassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
 
         #endregion
