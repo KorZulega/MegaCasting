@@ -42,21 +42,23 @@
         </Button>
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Content="Nom"/>
-            <Label Grid.Column="0" Grid.Row="1" Content="Nb Offres disponibles"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Ajouter offres"/>
-            <Label Grid.Column="0" Grid.Row="3" Content="Identifiant"/>
-            <Label Grid.Column="0" Grid.Row="4" Content="Mot de passe"/>
+            <Label Grid.Column="0" Grid.Row="0" Background="MediumPurple" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom :"/>
+            <Label Grid.Column="0" Grid.Row="1" Background="MediumPurple" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nb Offres disponibles :"/>
+            <Label Grid.Column="0" Grid.Row="2" Background="MediumPurple" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ajouter offres :"/>
+            <Label Grid.Column="0" Grid.Row="3" Background="MediumPurple" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Identifiant :"/>
+            <Label Grid.Column="0" Grid.Row="4" Background="MediumPurple" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe :"/>
         </Grid>
     </Grid>
 
