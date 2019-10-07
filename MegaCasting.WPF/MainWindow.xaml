@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MegaCasting.WPF"
         xmlns:views="clr-namespace:MegaCasting.WPF.Views"       
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MegaCasting" Height="450" Width="800"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
-    
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -36,18 +36,24 @@
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="Aqua">
+
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="MediumPurple">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="buttonExit"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                             Foreground = "White"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
                             Width="25" 
                             Height="25" 
                             HorizontalAlignment="Center" 
                             Click="ButtonExit_Click">
-                        <materialDesign:PackIcon Kind="ExitRun"/>
+                        <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="ExitRun" Background="Red"/>
                     </Button>
                 </StackPanel>
             </Grid>
+
         </Grid>
 
         <!--<Menu Grid.Row="0">
@@ -62,9 +68,63 @@
             
         </Menu>-->
 
-        <DockPanel Grid.Row="1">
+        <Grid Grid.Row="1" Grid.Column="0" Background="Purple">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Mega Casting" Background="MediumPurple" FontFamily="Visitor TT1 BRK" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
+
+            <Button Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
+                    <Grid Width="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
+
+                        <Label Grid.Column="1" Content="Annonceurs"></Label>
+
+                    </Grid>
+                </Button>
+            <Button Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5">
+                <Grid Width="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
+
+                    <Label Grid.Column="1" Content="Annonces"></Label>
+
+                </Grid>
+            </Button>
+            <Button Grid.Row="3" x:Name="offresBoutton" Margin="0,2.5,0,2.5">
+                <Grid Width="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
+
+                    <Label Grid.Column="1" Content="Offres"></Label>
+
+                </Grid>
+            </Button>
+
+        </Grid>
+
+        <DockPanel x:Name="dockPanelMain" Grid.Row="1" Grid.Column="1" >
             <views:ViewMain VerticalAlignment="Center" HorizontalAlignment="Center">
-                
+
             </views:ViewMain>
         </DockPanel>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.WPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,5 +30,20 @@ namespace MegaCasting.WPF
         {
             this.Close();
         }
+
+        private void AnnonceurBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            ViewAnnouncer viewAnnouncer = new ViewAnnouncer();
+            this.dockPanelMain.Children.Add(viewAnnouncer);
+            
+        }
+
+        private void CleanPanel()
+        {
+            this.dockPanelMain.Children.Clear();
+        }
     }
+
+    
 }
