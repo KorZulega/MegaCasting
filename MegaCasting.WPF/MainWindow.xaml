@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCasting.WPF"
+        xmlns:views="clr-namespace:MegaCasting.WPF.Views"       
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -12,26 +13,37 @@
             <RowDefinition Height= "*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <!--<Menu Grid.Row="0" >
-            <MenuItems>
-                <MenuItem>
-                    Fichier
-                </MenuItem>
-            </MenuItems>
-        </Menu>-->
+        <Menu Grid.Row="0" >
+            <MenuItem Header="Fichier">
+                <MenuItem Header="Annonceurs"></MenuItem>
+                <MenuItem Header="Offres"></MenuItem>
+                <MenuItem Header="Type de contrat"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuItemAnnonceur" Header="Gestion des annonceurs"/>
+            <MenuItem x:Name="menuItemOffres" Header="Gestion des offres"/>
+            <MenuItem x:Name="menuItemTypeContrat" Header="Gestion des type de contrat"/>
+            
+        </Menu>
+
+        <DockPanel Grid.Row="1">
+            <views:ViewMain>
+                
+            </views:ViewMain>
+        </DockPanel>
 
 
 
-        <DockPanel>
+        <!--<DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Annonceurs"/>
+                    <MenuItem Header="_Offres"/>
                     <MenuItem Header="_Save"/>
+                    <MenuItem Header="_Types de Contrat"/>
                 </MenuItem>
             </Menu>
-            <StackPanel></StackPanel>
-        </DockPanel>
+            
+        </DockPanel>-->
 
 
 
