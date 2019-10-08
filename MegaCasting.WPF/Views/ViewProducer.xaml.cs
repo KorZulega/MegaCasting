@@ -35,6 +35,7 @@ namespace MegaCasting.WPF.Views
             List<Producer> producers = megaCastingEntities.Producers.ToList();
 
             this.DataContext = new ViewModelViewProducer();
+
             //producers.ForEach(producer => listBoxAnnouncers.Items.Add(producer));
         }
 
@@ -53,6 +54,26 @@ namespace MegaCasting.WPF.Views
            
 
 
+        }
+
+        private void AddProducer_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelViewProducer)this.DataContext).AddProducer();
+            
+            
+
+
+
+        }
+
+        private void DeleteProducer_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelViewProducer)this.DataContext).DeleteProduter();
+        }
+
+        private void SaveProducer_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelViewProducer)this.DataContext).SaveProducer();
         }
     }
 }

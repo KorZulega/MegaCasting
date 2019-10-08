@@ -15,7 +15,7 @@ namespace MegaCasting.Client
     {
 
         /*
-         * Voici un exemple de projet incluant une base de donnée connectée via EntiryFramework, voici les étapes à suivre :
+         * Voici un exemple de projet incluant une base de donnée connectée via EntityFramework, voici les étapes à suivre :
          * 
          * 1- Créer sa base de données sur SSMS (penser au clés primaires et unicité)
          * 2- ajouter un projet de base de données dans le projet en cours (avec les identifiants)

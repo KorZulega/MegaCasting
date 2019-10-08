@@ -23,25 +23,39 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="textBlockAnnouncer" Grid.Column="0" Grid.Row="0" Text="Liste des annonceurs" FontSize="21" TextAlignment="Center"/>
-        <ListBox x:Name="listBoxAnnouncers" Grid.Row="1" Grid.Column="0" SelectionChanged="ListBoxAnnouncers_SelectionChanged" DisplayMemberPath="Name"/>
-        <Button Background="#1DB954" Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5">
+        <materialDesign:DialogHost Grid.Column="2" SnackbarMessageQueue="{Binding ElementName=MySnackbar, Path=MessageQueue}">
+            <Grid>
+                <!-- app content here -->
+                <materialDesign:Snackbar MessageQueue="{Binding MyMessageQueue}" />
+            </Grid>
+        </materialDesign:DialogHost>
+
+        <TextBlock x:Name="textBlockAnnouncer" Grid.Column="0" Grid.Row="0" Text="Liste des annonceurs" FontSize="21" TextAlignment="Center" VerticalAlignment="Center"/>
+        <ListBox x:Name="listBoxAnnouncers" Grid.Row="1" Grid.Column="0" SelectionChanged="ListBoxAnnouncers_SelectionChanged" DisplayMemberPath="Name" 
+                 ItemsSource="{Binding Producers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProducer, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Background="#1DB954" Grid.Row="2" x:Name="addProducer" Margin="0,2.5,0,2.5" Click="AddProducer_Click">
             <Grid Width="150">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="PlusBox"/>
+                <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="PlusBox" Margin="7,4" Grid.RowSpan="2"/>
 
-                <Label Grid.Column="1" Content="Ajouter"></Label>
+                <Label Height="40" Grid.Column="1" Content="Ajouter" HorizontalContentAlignment="Center" Margin="0,0,0,-16" Grid.RowSpan="2"></Label>
 
             </Grid>
         </Button>
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Grid Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
@@ -49,17 +63,54 @@
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="15"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="15"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="textBoxName" Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" />
-            <TextBox x:Name="textBoxOffers" Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center"/>
-            <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ajouter offres :"/>
-            <TextBox x:Name="textBoxId" Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center"/>
-            <TextBox x:Name="textBoxPassword" Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center"/>
+            <TextBox x:Name="textBoxName" Grid.Column="2" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox x:Name="textBoxOffers" Grid.Column="2" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center"/>
+            <Label Grid.Column="2" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ajouter offres :"/>
+            <TextBox x:Name="textBoxId" Grid.Column="2" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Identifier, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxPassword" Grid.Column="2" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Password, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom :"/>
+            <Label Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="TBA :"/>
+            <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="TBA :"/>
+            <Label Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Identifiant :"/>
+            <Label Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe :"/>
+
+            <Button Background="#1DB954" Grid.Column="0" Grid.Row="7" x:Name="saveProducer" Margin="0,2.5,0,2.5" Click="SaveProducer_Click">
+                <Grid Width="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Floppy"/>
+
+                    <Label Height="40" Grid.Column="1" Content="Enregistrer" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"></Label>
+
+                </Grid>
+            </Button>
+
+            <Button Background="#1DB954" Grid.Column="2" Grid.Row="7" x:Name="deleteProducer" Margin="0,2,0,2" Click="DeleteProducer_Click">
+                <Grid Width="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Delete"/>
+
+                    <Label Height="40" Grid.Column="1" Content="Supprimer" HorizontalContentAlignment="Center"></Label>
+
+                </Grid>
+            </Button>
         </Grid>
     </Grid>
 

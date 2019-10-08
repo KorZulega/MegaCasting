@@ -40,6 +40,16 @@
 
             <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#363636">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="buttonMinimize"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                            Foreground = "White"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Width="25" 
+                            Height="25" 
+                            HorizontalAlignment="Center" Click="ButtonMinimize_Click">
+                        <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Background="#1DB954"/>
+                    </Button>
                     <Button x:Name="buttonExit"
                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                             Foreground = "White"
@@ -49,8 +59,9 @@
                             Height="25" 
                             HorizontalAlignment="Center" 
                             Click="ButtonExit_Click">
-                        <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="ExitRun" Background="Red"/>
+                        <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Close" Background="#1DB954"/>
                     </Button>
+                    
                 </StackPanel>
             </Grid>
 
@@ -122,7 +133,7 @@
 
                     <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
 
-                    <Label Grid.Column="1" Content="Offres"></Label>
+                    <Label Height="30" Grid.Column="1" Content="Offres"></Label>
 
                 </Grid>
             </Button>
@@ -136,7 +147,7 @@
 
                     <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Gear"/>
 
-                    <Label Grid.Column="1" Content="Options"></Label>
+                    <Label Height="40" Grid.Column="1" Content="Options"></Label>
 
                 </Grid>
             </Button>

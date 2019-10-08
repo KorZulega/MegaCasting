@@ -34,8 +34,8 @@ namespace MegaCasting.WPF
         private void AnnonceurBoutton_Click(object sender, RoutedEventArgs e)
         {
             CleanPanel();
-            ViewProducer viewAnnouncer = new ViewProducer();
-            this.dockPanelMain.Children.Add(viewAnnouncer);
+            ViewProducer viewProducer = new ViewProducer();
+            this.dockPanelMain.Children.Add(viewProducer);
             
         }
 
@@ -47,8 +47,13 @@ namespace MegaCasting.WPF
         private void AnnonceBoutton_Click(object sender, RoutedEventArgs e)
         {
             CleanPanel();
-            ViewAnnouncement announcementView = new ViewAnnouncement();
-            this.dockPanelMain.Children.Add(announcementView);
+            ViewAnnouncement viewAnnouncement = new ViewAnnouncement();
+            this.dockPanelMain.Children.Add(viewAnnouncement);
+        }
+
+        private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 
