@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MegaCasting.DBLib;
+
 
 namespace MegaCasting.WPF.Views
 {
@@ -20,9 +22,36 @@ namespace MegaCasting.WPF.Views
     /// </summary>
     public partial class ViewAnnouncer : UserControl
     {
+        #region Static Attributes
+
+        public static MegaCastingEntities megaCastingEntities = new MegaCastingEntities();
+
+        #endregion
+
         public ViewAnnouncer()
         {
             InitializeComponent();
+
+            List<Producer> producers = megaCastingEntities.Producers.ToList();
+
+            producers.ForEach(producer => listBoxAnnouncers.Items.Add(producer));
+        }
+
+        private void ListBoxAnnouncers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listBoxAnnouncers.SelectedItem != null)
+            {
+                name.Text = ((Producer)listBoxAnnouncers.SelectedItem).Name;
+            }
+            else
+            {
+
+            }
+            
+
+           
+
+
         }
     }
 }

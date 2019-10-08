@@ -77,24 +77,29 @@
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
-                
+
             </Grid.RowDefinitions>
 
             <TextBlock Background="#1DB954" Grid.Row="0" Text="Mega Casting"  FontFamily="Visitor TT1 BRK" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button Background="#1DB954" Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
-                    <Grid Width="150">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                
+                <Grid Width="150">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                        <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin" Margin="7,4" Grid.RowSpan="2"/>
 
-                        <Label Grid.Column="1" Content="Annonceurs"></Label>
+                    <Label Grid.Column="1" Content="Annonceurs" Grid.RowSpan="2"></Label>
 
-                    </Grid>
-                </Button>
+                </Grid>
+            </Button>
             <Button Background="#1DB954" Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5" Click="AnnonceBoutton_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>

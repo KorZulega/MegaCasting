@@ -15,6 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="#4f4f4f">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -26,7 +27,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock x:Name="textBlockAnnouncer" Grid.Column="0" Grid.Row="0" Text="Liste des annonceurs" FontSize="21" TextAlignment="Center"/>
-        <ListBox x:Name="listBoxAnnouncers" Grid.Row="1" Grid.Column="0"/>
+        <ListBox x:Name="listBoxAnnouncers" Grid.Row="1" Grid.Column="0" SelectionChanged="ListBoxAnnouncers_SelectionChanged" DisplayMemberPath="Name"/>
         <Button Background="#1DB954" Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5">
             <Grid Width="150">
                 <Grid.ColumnDefinitions>
@@ -54,11 +55,11 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom :"/>
-            <Label Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nb Offres disponibles :"/>
+            <TextBox x:Name="name" Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" />
+            <Label x:Name="offers" Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nb Offres disponibles :"/>
             <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ajouter offres :"/>
-            <Label Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Identifiant :"/>
-            <Label Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe :"/>
+            <Label x:Name="id" Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Identifiant :"/>
+            <Label x:Name="password" Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe :"/>
         </Grid>
     </Grid>
 
