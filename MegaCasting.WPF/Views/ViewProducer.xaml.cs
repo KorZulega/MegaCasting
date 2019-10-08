@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MegaCasting.DBLib;
-
+using MegaCasting.WPF.ViewModel;
 
 namespace MegaCasting.WPF.Views
 {
     /// <summary>
     /// Logique d'interaction pour ViewAnnouncer.xaml
     /// </summary>
-    public partial class ViewAnnouncer : UserControl
+    public partial class ViewProducer : UserControl
     {
         #region Static Attributes
 
@@ -28,20 +28,21 @@ namespace MegaCasting.WPF.Views
 
         #endregion
 
-        public ViewAnnouncer()
+        public ViewProducer()
         {
             InitializeComponent();
 
             List<Producer> producers = megaCastingEntities.Producers.ToList();
 
-            producers.ForEach(producer => listBoxAnnouncers.Items.Add(producer));
+            this.DataContext = new ViewModelViewProducer();
+            //producers.ForEach(producer => listBoxAnnouncers.Items.Add(producer));
         }
 
         private void ListBoxAnnouncers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (listBoxAnnouncers.SelectedItem != null)
             {
-                name.Text = ((Producer)listBoxAnnouncers.SelectedItem).Name;
+                //name.Text = ((Producer)listBoxAnnouncers.SelectedItem).Name;
             }
             else
             {

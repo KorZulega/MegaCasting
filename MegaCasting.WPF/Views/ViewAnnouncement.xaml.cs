@@ -18,9 +18,9 @@ namespace MegaCasting.WPF.Views
     /// <summary>
     /// Logique d'interaction pour AnnouncementView.xaml
     /// </summary>
-    public partial class AnnouncementView : UserControl
+    public partial class ViewAnnouncement : UserControl
     {
-        public AnnouncementView()
+        public ViewAnnouncement()
         {
             InitializeComponent();
         }

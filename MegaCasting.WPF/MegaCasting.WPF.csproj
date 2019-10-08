@@ -72,11 +72,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\AnnouncementView.xaml.cs">
-      <DependentUpon>AnnouncementView.xaml</DependentUpon>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelViewProducer.cs" />
+    <Compile Include="Views\ViewAnnouncement.xaml.cs">
+      <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewAnnouncer.xaml.cs">
-      <DependentUpon>ViewAnnouncer.xaml</DependentUpon>
+    <Compile Include="Views\ViewProducer.xaml.cs">
+      <DependentUpon>ViewProducer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
@@ -93,11 +95,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AnnouncementView.xaml">
+    <Page Include="Views\ViewAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewAnnouncer.xaml">
+    <Page Include="Views\ViewProducer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">
       <Project>{4441b39d-2a00-4975-8f97-e60511fbdd0f}</Project>
