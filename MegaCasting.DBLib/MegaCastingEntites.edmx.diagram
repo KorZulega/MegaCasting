@@ -5,15 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5b86850a9e32493cb12fe5b106d4d6c2" Name="Diagram1">
-        <EntityTypeShape EntityType="MegaCastingModel.ContractType" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MegaCastingModel.Job" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MegaCastingModel.JobType" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MegaCastingModel.Offer" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MegaCastingModel.Producer" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="MegaCastingModel.FK_Offer_ContractType" ManuallyRouted="false" />
-        <AssociationConnector Association="MegaCastingModel.FK_Job_JobType" ManuallyRouted="false" />
-        <AssociationConnector Association="MegaCastingModel.FK_Offer_Job" ManuallyRouted="false" />
-        <AssociationConnector Association="MegaCastingModel.FK_Offer_Producer" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MegaCastingModel.ContractType" Width="3.125" PointX="3.125" PointY="1.625" />
+        <EntityTypeShape EntityType="MegaCastingModel.Customer" Width="3.125" PointX="3.125" PointY="3.875" />
+        <EntityTypeShape EntityType="MegaCastingModel.Job" Width="3.125" PointX="13" PointY="1.5" />
+        <EntityTypeShape EntityType="MegaCastingModel.JobType" Width="3.125" PointX="13" PointY="4.625" />
+        <EntityTypeShape EntityType="MegaCastingModel.Offer" Width="3.125" PointX="7.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MegaCastingModel.Producer" Width="3.125" PointX="7.875" PointY="7.125" />
+        <AssociationConnector Association="MegaCastingModel.FK_Offer_ContractType" />
+        <AssociationConnector Association="MegaCastingModel.FK_Offer_Customer" />
+        <AssociationConnector Association="MegaCastingModel.FK_Job_JobType" />
+        <AssociationConnector Association="MegaCastingModel.FK_Offer_Job" />
+        <AssociationConnector Association="MegaCastingModel.FK_Offer_Producer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

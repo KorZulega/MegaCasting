@@ -24,6 +24,8 @@ namespace MegaCasting.WPF
         public MainWindow()
         {
             InitializeComponent();
+            this.Height = 730;
+            this.Width = 900;
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
@@ -54,6 +56,35 @@ namespace MegaCasting.WPF
         private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void ButtonFullWindowed_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+                buttonFullWindowedMaterial.Kind.Equals("WindowMaximize");
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+                buttonFullWindowedMaterial.Kind.Equals("WindowMinimize");
+            }
+            
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+
+        private void ClientsBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            ViewCustomer viewCustomer = new ViewCustomer();
+            this.dockPanelMain.Children.Add(viewCustomer);
         }
     }
 

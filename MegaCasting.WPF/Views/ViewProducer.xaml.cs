@@ -59,11 +59,6 @@ namespace MegaCasting.WPF.Views
         private void AddProducer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewProducer)this.DataContext).AddProducer();
-            
-            
-
-
-
         }
 
         private void DeleteProducer_Click(object sender, RoutedEventArgs e)

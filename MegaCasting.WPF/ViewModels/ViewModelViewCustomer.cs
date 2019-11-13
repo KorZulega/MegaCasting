@@ -1,5 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MegaCasting.DBLib;
+using MegaCasting.WPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace MegaCasting.WPF.ViewModels
 {
-    class ViewModelViewProducer : ViewModelBase
+    class ViewModelViewCustomer : ViewModelBase
     {
         #region Attributes
-        private ObservableCollection<Producer> _Producers;
+        private ObservableCollection<Customer> _Customers;
         #endregion
-        private Producer _SelectedProducer;
+        private Customer _SelectedCustomer;
         private SnackbarMessageQueue _MyMessageQueue;
 
         public SnackbarMessageQueue MyMessageQueue
@@ -27,56 +28,58 @@ namespace MegaCasting.WPF.ViewModel
 
 
         #region Properties
-        public ObservableCollection<Producer> Producers
+        public ObservableCollection<Customer> Customers
         {
-            get { return _Producers; }
-            set { _Producers = value; }
+            get { return _Customers; }
+            set { _Customers = value; }
         }
 
-        public Producer SelectedProducer
+        public Customer SelectedCustomer
         {
-            get { return _SelectedProducer; }
-            set { _SelectedProducer = value; }
+            get { return _SelectedCustomer; }
+            set { _SelectedCustomer = value; }
         }
         #endregion
         #region Constructor
-        public ViewModelViewProducer()
+        public ViewModelViewCustomer()
         {
-            Producers = new ObservableCollection<Producer>(this.Entities.Producers);
-            MyMessageQueue = new SnackbarMessageQueue(); 
+            Customers = new ObservableCollection<Customer>(this.Entities.Customers);
+            MyMessageQueue = new SnackbarMessageQueue();
         }
 
         #endregion
 
         #region Methods
 
-        public void AddProducer()
+        public void AddCustomer()
         {
-            try {
-                Producer producer = new Producer();
-                producer.Name = "Saisir un nom";
-                producer.UserName = CreateRandomPassphrase(8);
-                producer.Password = CreateRandomPassphrase(15);
+            try
+            {
+                Customer Customer = new Customer();
+                Customer.Name = "Saisir un nom";
+                Customer.UserName = CreateRandomPassphrase(8);
+                Customer.Password = CreateRandomPassphrase(15);
 
-                this.Producers.Add(producer);
-                this.Entities.Producers.Add(producer);
-                
+                this.Customers.Add(Customer);
+                this.Entities.Customers.Add(Customer);
+
                 MyMessageQueue.Enqueue("Un producteur a été ajouté, pensez à l'enregistrer");
             }
             catch
             {
                 MyMessageQueue.Enqueue("Une erreur s'est produite !");
             }
-            
+
 
 
         }
 
-        public void DeleteProduter()
+        public void DeleteCustomer()
         {
-            try {
-                this.Entities.Producers.Remove(SelectedProducer);
-                this.Producers.Remove(SelectedProducer);
+            try
+            {
+                this.Entities.Customers.Remove(SelectedCustomer);
+                this.Customers.Remove(SelectedCustomer);
                 this.Entities.SaveChanges();
                 MyMessageQueue.Enqueue("Le producteur a bien été supprimé");
             }
@@ -84,22 +87,23 @@ namespace MegaCasting.WPF.ViewModel
             {
                 MyMessageQueue.Enqueue("Une erreur s'est produite !");
             }
-            
+
         }
 
-        public void SaveProducer()
+        public void SaveCustomer()
         {
-            try {
-                Producers.Where(producer => producer.Identifier.Equals(SelectedProducer.Identifier));
+            try
+            {
+                Customers.Where(Customer => Customer.Identifier.Equals(SelectedCustomer.Identifier));
                 this.Entities.SaveChanges();
-                MyMessageQueue.Enqueue(SelectedProducer.Name + " a bien été modifié !");
+                MyMessageQueue.Enqueue(SelectedCustomer.Name + " a bien été modifié !");
             }
             catch
             {
                 MyMessageQueue.Enqueue("Wow, une erreur s'est produite !");
             }
-            
-            
+
+
         }
 
         public static string CreateRandomPassphrase(int length)
@@ -115,8 +119,5 @@ namespace MegaCasting.WPF.ViewModel
         }
 
         #endregion
-
-
-        
     }
 }

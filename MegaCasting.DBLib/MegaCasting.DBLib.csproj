@@ -56,6 +56,9 @@
     <Compile Include="ContractType.cs">
       <DependentUpon>MegaCastingEntites.tt</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>MegaCastingEntites.tt</DependentUpon>
+    </Compile>
     <Compile Include="Job.cs">
       <DependentUpon>MegaCastingEntites.tt</DependentUpon>
     </Compile>

@@ -26,6 +26,7 @@ namespace MegaCasting.DBLib
         }
     
         public virtual DbSet<ContractType> ContractTypes { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<JobType> JobTypes { get; set; }
         public virtual DbSet<Offer> Offers { get; set; }

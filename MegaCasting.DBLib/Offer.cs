@@ -17,20 +17,22 @@ namespace MegaCasting.DBLib
         public long Identifier { get; set; }
         public string Name { get; set; }
         public string Reference { get; set; }
-        public long IdentifierJob { get; set; }
-        public long IdentifierContractType { get; set; }
-        public Nullable<System.DateTime> PublishDateTime { get; set; }
-        public int Duration { get; set; }
+        public System.DateTime PublishDateTime { get; set; }
+        public Nullable<int> Duration { get; set; }
         public Nullable<System.DateTime> StartContractDate { get; set; }
-        public Nullable<int> PostCount { get; set; }
+        public int PostCount { get; set; }
         public string JobDescription { get; set; }
         public string ProfilDescription { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
+        public long IdentifierJob { get; set; }
+        public long IdentifierContractType { get; set; }
         public long IdentifierProducer { get; set; }
+        public Nullable<long> IdentifierCustomer { get; set; }
     
         public virtual ContractType ContractType { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual Job Job { get; set; }
         public virtual Producer Producer { get; set; }
     }

@@ -17,17 +17,18 @@
         FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
 
-    <Grid>
+    <Grid Background="#363636">
         <Grid.RowDefinitions>
             <RowDefinition Height= "20pt"></RowDefinition>
             <RowDefinition Height= "*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -38,7 +39,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#363636">
+            <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#363636">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="buttonMinimize"
                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
@@ -49,6 +50,16 @@
                             Height="25" 
                             HorizontalAlignment="Center" Click="ButtonMinimize_Click">
                         <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Background="#1DB954"/>
+                    </Button>
+                    <Button x:Name="buttonFullWindowed"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                            Foreground = "White"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Width="25" 
+                            Height="25" 
+                            HorizontalAlignment="Center" Click="ButtonFullWindowed_Click">
+                        <materialDesign:PackIcon x:Name="buttonFullWindowedMaterial" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMaximize" Background="#1DB954"/>
                     </Button>
                     <Button x:Name="buttonExit"
                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
@@ -120,11 +131,11 @@
 
                     <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
 
-                    <Label Grid.Column="1" Content="Annonces"></Label>
+                    <Label Grid.Column="1" Content="Offres"></Label>
 
                 </Grid>
             </Button>
-            <Button Background="#1DB954" Grid.Row="3" x:Name="offresBoutton" Margin="0,2.5,0,2.5">
+            <Button Background="#1DB954" Grid.Row="3" x:Name="clientBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -133,7 +144,7 @@
 
                     <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
 
-                    <Label Height="30" Grid.Column="1" Content="Offres"></Label>
+                    <Label Height="30" Grid.Column="1" Content="Clients"></Label>
 
                 </Grid>
             </Button>
@@ -154,7 +165,7 @@
 
         </Grid>
 
-        <DockPanel Background="#363636" x:Name="dockPanelMain" Grid.Row="1" Grid.Column="1" >
+        <DockPanel Background="#363636" x:Name="dockPanelMain" Grid.Row="1" Grid.Column="3" >
             <views:ViewMain VerticalAlignment="Center" HorizontalAlignment="Center">
 
             </views:ViewMain>

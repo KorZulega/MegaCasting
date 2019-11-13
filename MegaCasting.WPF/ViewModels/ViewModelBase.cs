@@ -20,7 +20,7 @@ namespace MegaCasting.WPF.ViewModel
             set { _Entities = value; }
         }
         #endregion
-        #region Contructor
+        #region Constructor
         public ViewModelBase()
         {
             this.Entities = new MegaCastingEntities();

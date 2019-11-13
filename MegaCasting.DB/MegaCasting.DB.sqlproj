@@ -65,5 +65,6 @@
     <Build Include="dbo\Tables\JobType.sql" />
     <Build Include="dbo\Tables\Job.sql" />
     <Build Include="dbo\Tables\ContractType.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
   </ItemGroup>
 </Project>
