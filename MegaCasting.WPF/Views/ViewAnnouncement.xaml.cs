@@ -24,10 +24,17 @@ namespace MegaCasting.WPF.Views
     public partial class ViewAnnouncement : UserControl
     {
         #region Static Attributes
-
+        /// <summary>
+        /// Instanciation d'une entité de la base de données
+        /// </summary>
         public static MegaCastingEntities megaCastingEntities = new MegaCastingEntities();
 
         #endregion
+
+        #region Constructors
+        /// <summary>
+        /// Contructeur de la vue des offres
+        /// </summary>
         public ViewAnnouncement()
         {
             InitializeComponent();
@@ -36,5 +43,6 @@ namespace MegaCasting.WPF.Views
 
             this.DataContext = new ViewModelViewAnnouncement();
         }
+        #endregion
     }
 }

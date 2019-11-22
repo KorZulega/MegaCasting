@@ -13,25 +13,40 @@ namespace MegaCasting.WPF.ViewModels
     class ViewModelViewAnnouncement : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Liste d'offre privée
+        /// </summary>
         private ObservableCollection<Offer> _Offers;
-        
+        /// <summary>
+        /// Contient l'offre sélectionnée dans l'application
+        /// </summary>
         private Offer _SelectedOffer;
+        //Contient les messages d'information de la SnackBar
         private SnackbarMessageQueue _MyMessageQueue;
         #endregion
         #region Properties
+
+        /// <summary>
+        /// Retourne ou affecte la valeur de la SnackBar
+        /// </summary>
         public SnackbarMessageQueue MyMessageQueue
         {
             get { return _MyMessageQueue; }
             set { _MyMessageQueue = value; }
         }
 
+        /// <summary>
+        /// Retourne ou affecte la liste d'offre
+        /// </summary>
         public ObservableCollection<Offer> Offers
         {
             get { return _Offers; }
             set { _Offers = value; }
         }
         
-
+        /// <summary>
+        /// Affecte ou retourne l'offre sélectionnée
+        /// </summary>
         public Offer SelectedOffer
         {
             get { return _SelectedOffer; }
@@ -41,6 +56,9 @@ namespace MegaCasting.WPF.ViewModels
         #endregion
         #region Constructors
 
+        /// <summary>
+        /// Constructeur du ViewModel de l'offre
+        /// </summary>
         public ViewModelViewAnnouncement()
         {
             Offers = new ObservableCollection<Offer>(this.Entities.Offers);
@@ -50,7 +68,9 @@ namespace MegaCasting.WPF.ViewModels
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Méthode permettant d'ajouter une offre temporaire dans l'application sans implémenter la sauvegarde de l'entité dans la base de donnée
+        /// </summary>
         public void AddOffer()
         {
             try

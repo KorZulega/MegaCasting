@@ -20,6 +20,10 @@ namespace MegaCasting.WPF.Views
     /// </summary>
     public partial class ViewMain : UserControl
     {
+
+        /// <summary>
+        /// Constructeur de la vue principale de démarrage
+        /// </summary>
         public ViewMain()
         {
             InitializeComponent();

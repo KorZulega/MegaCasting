@@ -97,6 +97,10 @@
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
 
@@ -106,7 +110,7 @@
 
             <Button Background="#1DB954" Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
                 
-                <Grid Width="150">
+                <Grid Width="170">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
                         <RowDefinition Height="3*"/>
@@ -116,14 +120,14 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin" Margin="7,4" Grid.RowSpan="2"/>
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="PersonAlert" Margin="7,4" Grid.RowSpan="2"/>
 
                     <Label Grid.Column="1" Content="Annonceurs" Grid.RowSpan="2"></Label>
 
                 </Grid>
             </Button>
             <Button Background="#1DB954" Grid.Row="2" x:Name="annonceBoutton" Margin="0,2.5,0,2.5" Click="AnnonceBoutton_Click">
-                <Grid Width="150">
+                <Grid Width="170">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -135,21 +139,65 @@
 
                 </Grid>
             </Button>
+            
+
             <Button Background="#1DB954" Grid.Row="3" x:Name="clientBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
-                <Grid Width="150">
+                <Grid Width="170">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Coin"/>
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="PersonBadge"/>
 
                     <Label Height="30" Grid.Column="1" Content="Clients"></Label>
 
                 </Grid>
             </Button>
 
-            <Button Background="Gray" Grid.Row="5" x:Name="settingsBoutton" Margin="0,2.5,0,2.5">
+            <Button Background="#1DB954" Grid.Row="5" x:Name="jobBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+                <Grid Width="170">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Hammer"/>
+
+                    <Label Height="30" Grid.Column="1" Content="Métiers"></Label>
+
+                </Grid>
+            </Button>
+
+            <Button Background="#1DB954" Grid.Row="6" x:Name="jobTypeBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+                <Grid Width="170">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Pin"/>
+
+                    <Label Height="30" Grid.Column="1" Content="Domaine de Métiers"></Label>
+
+                </Grid>
+            </Button>
+
+            <Button Background="#1DB954" Grid.Row="7" x:Name="contractTypeBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+                <Grid Width="170">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Newspaper"/>
+
+                    <Label Height="30" Grid.Column="1" Content="Type de contrats"></Label>
+
+                </Grid>
+            </Button>
+
+            <Button Background="Gray" Grid.Row="9" x:Name="settingsBoutton" Margin="0,2.5,0,2.5">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>

@@ -147,7 +147,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Ressource\image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">
       <Project>{4441b39d-2a00-4975-8f97-e60511fbdd0f}</Project>

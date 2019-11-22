@@ -23,10 +23,16 @@ namespace MegaCasting.WPF.Views
     public partial class ViewCustomer : UserControl
     {
         #region Static Attributes
-
+        /// <summary>
+        /// Instanciation d'une entité de la base de données
+        /// </summary>
         public static MegaCastingEntities megaCastingEntities = new MegaCastingEntities();
 
         #endregion
+
+        /// <summary>
+        /// Constructeur de la View du client
+        /// </summary>
         public ViewCustomer()
         {
             InitializeComponent();
@@ -36,16 +42,31 @@ namespace MegaCasting.WPF.Views
             this.DataContext = new ViewModelViewCustomer();
         }
 
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode AddCustomer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewCustomer)this.DataContext).AddCustomer();
         }
 
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode DeleteCustome
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewCustomer)this.DataContext).DeleteCustomer();
         }
 
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode SaveCustomer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveCustomer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewCustomer)this.DataContext).SaveCustomer();

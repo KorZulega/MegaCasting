@@ -23,11 +23,16 @@ namespace MegaCasting.WPF.Views
     public partial class ViewProducer : UserControl
     {
         #region Static Attributes
-
+        /// <summary>
+        /// Instanciation d'une entité de la base de données
+        /// </summary>
         public static MegaCastingEntities megaCastingEntities = new MegaCastingEntities();
 
         #endregion
 
+        /// <summary>
+        /// Constructeur de la vue de l'annonceur
+        /// </summary>
         public ViewProducer()
         {
             InitializeComponent();
@@ -39,33 +44,47 @@ namespace MegaCasting.WPF.Views
             //producers.ForEach(producer => listBoxAnnouncers.Items.Add(producer));
         }
 
-        private void ListBoxAnnouncers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (listBoxAnnouncers.SelectedItem != null)
-            {
-                //name.Text = ((Producer)listBoxAnnouncers.SelectedItem).Name;
-            }
-            else
-            {
+        //private void ListBoxAnnouncers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (listBoxAnnouncers.SelectedItem != null)
+        //    {
+        //        //name.Text = ((Producer)listBoxAnnouncers.SelectedItem).Name;
+        //    }
+        //    else
+        //    {
 
-            }
+        //    }
             
 
            
 
 
-        }
+        //}
 
+
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode AddProducer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddProducer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewProducer)this.DataContext).AddProducer();
         }
-
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode DeleteProducter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteProducer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewProducer)this.DataContext).DeleteProduter();
         }
-
+        /// <summary>
+        /// Evènement type "click" déclenchant la méthode SaveProducer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveProducer_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelViewProducer)this.DataContext).SaveProducer();

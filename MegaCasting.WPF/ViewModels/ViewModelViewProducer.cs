@@ -12,27 +12,46 @@ namespace MegaCasting.WPF.ViewModel
     class ViewModelViewProducer : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Attribut privé contenant la liste des annonceurs
+        /// </summary>
         private ObservableCollection<Producer> _Producers;
-        #endregion
-        private Producer _SelectedProducer;
-        private SnackbarMessageQueue _MyMessageQueue;
 
+        /// <summary>
+        /// Attribut privé contenant l'annonceur sélectionné
+        /// </summary>
+        private Producer _SelectedProducer;
+
+        /// <summary>
+        /// Attribut privé contenant les messages de la SnackBar
+        /// </summary>
+        private SnackbarMessageQueue _MyMessageQueue;
+        #endregion
+
+
+
+        #region Properties
+        /// <summary>
+        /// Affecte ou retourne les messages de la SnackBar
+        /// </summary>
         public SnackbarMessageQueue MyMessageQueue
         {
             get { return _MyMessageQueue; }
             set { _MyMessageQueue = value; }
         }
 
-
-
-
-        #region Properties
+        /// <summary>
+        /// Affecte ou retourne la liste des annonceurs
+        /// </summary>
         public ObservableCollection<Producer> Producers
         {
             get { return _Producers; }
             set { _Producers = value; }
         }
 
+        /// <summary>
+        /// Affecte ou retourne l'annonceur sélectionné
+        /// </summary>
         public Producer SelectedProducer
         {
             get { return _SelectedProducer; }
@@ -40,6 +59,10 @@ namespace MegaCasting.WPF.ViewModel
         }
         #endregion
         #region Constructor
+
+        /// <summary>
+        /// Constructeur du ViewModel de l'annonceur
+        /// </summary>
         public ViewModelViewProducer()
         {
             Producers = new ObservableCollection<Producer>(this.Entities.Producers);
@@ -50,6 +73,9 @@ namespace MegaCasting.WPF.ViewModel
 
         #region Methods
 
+        /// <summary>
+        /// Méthode permettant de créer un nouvel annonceur dans l'application sans l'ajouter dans la base de données
+        /// </summary>
         public void AddProducer()
         {
             try {
@@ -72,6 +98,9 @@ namespace MegaCasting.WPF.ViewModel
 
         }
 
+        /// <summary>
+        /// Méthode permettant de supprimer l'annonceur sélectionnée de la base de données
+        /// </summary>
         public void DeleteProduter()
         {
             try {
@@ -87,6 +116,9 @@ namespace MegaCasting.WPF.ViewModel
             
         }
 
+        /// <summary>
+        /// Méthode permettant de sauvegarder les changements en base de données concernant l'annonceur sélectionné
+        /// </summary>
         public void SaveProducer()
         {
             try {
@@ -102,6 +134,11 @@ namespace MegaCasting.WPF.ViewModel
             
         }
 
+        /// <summary>
+        /// Méthode permettant de créer une chaine alphanumérique aléatoire dont la longueur est passée en paramètre
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns>Retourne la chaine de type string</returns>
         public static string CreateRandomPassphrase(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

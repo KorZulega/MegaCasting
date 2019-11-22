@@ -14,6 +14,9 @@ namespace MegaCasting.WPF.ViewModel
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Permet de définir et de retourner les valeurs de la base de données
+        /// </summary>
         public MegaCastingEntities Entities
         {
             get { return _Entities; }
@@ -21,6 +24,9 @@ namespace MegaCasting.WPF.ViewModel
         }
         #endregion
         #region Constructor
+        /// <summary>
+        /// Permet de créer une instance de la base de donnée
+        /// </summary>
         public ViewModelBase()
         {
             this.Entities = new MegaCastingEntities();

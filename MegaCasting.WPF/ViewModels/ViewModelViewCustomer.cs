@@ -10,30 +10,55 @@ using System.Threading.Tasks;
 
 namespace MegaCasting.WPF.ViewModels
 {
+    /// <summary>
+    /// ViewModel de l'entité Client
+    /// </summary>
     class ViewModelViewCustomer : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Attribut privé stockant la liste de clients
+        /// </summary>
         private ObservableCollection<Customer> _Customers;
-        #endregion
-        private Customer _SelectedCustomer;
-        private SnackbarMessageQueue _MyMessageQueue;
 
+        /// <summary>
+        /// Attribut privé contenant le client sélectionné
+        /// </summary>
+        private Customer _SelectedCustomer;
+
+        /// <summary>
+        /// Attribut privé contenant les messages de la SnackBar
+        /// </summary>
+        private SnackbarMessageQueue _MyMessageQueue;
+        #endregion
+
+
+
+
+
+
+        #region Properties
+
+        /// <summary>
+        /// Affecte ou retourne les messages de la Snackbar
+        /// </summary>
         public SnackbarMessageQueue MyMessageQueue
         {
             get { return _MyMessageQueue; }
             set { _MyMessageQueue = value; }
         }
 
-
-
-
-        #region Properties
+        /// <summary>
+        /// Affecte ou retourne la liste des clients
+        /// </summary>
         public ObservableCollection<Customer> Customers
         {
             get { return _Customers; }
             set { _Customers = value; }
         }
-
+        /// <summary>
+        /// Affecte ou retourne le client sélectionné
+        /// </summary>
         public Customer SelectedCustomer
         {
             get { return _SelectedCustomer; }
@@ -41,6 +66,10 @@ namespace MegaCasting.WPF.ViewModels
         }
         #endregion
         #region Constructor
+
+        /// <summary>
+        /// Constructeur du ModelView du client
+        /// </summary>
         public ViewModelViewCustomer()
         {
             Customers = new ObservableCollection<Customer>(this.Entities.Customers);
@@ -51,6 +80,10 @@ namespace MegaCasting.WPF.ViewModels
 
         #region Methods
 
+        /// <summary>
+        /// Méthode permettant d'ajouter un client dans l'application, cette méthode n'implémente pas la sauvegarde dans la BDD 
+        /// et les changements seront perdus si l'élément perd le focus
+        /// </summary>
         public void AddCustomer()
         {
             try
@@ -73,7 +106,9 @@ namespace MegaCasting.WPF.ViewModels
 
 
         }
-
+        /// <summary>
+        /// Méthode permettant de supprimer le client sélectionnée de la base de données
+        /// </summary>
         public void DeleteCustomer()
         {
             try
@@ -89,7 +124,9 @@ namespace MegaCasting.WPF.ViewModels
             }
 
         }
-
+        /// <summary>
+        /// Permet de sauvegarder en base de données les changements appliqués au client sélectionné
+        /// </summary>
         public void SaveCustomer()
         {
             try
@@ -106,6 +143,11 @@ namespace MegaCasting.WPF.ViewModels
 
         }
 
+        /// <summary>
+        /// Méthode permettant de créer une chaîne de caractères alphanumérique d'une longeur passée en paramètres
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
         public static string CreateRandomPassphrase(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
