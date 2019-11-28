@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MegaCasting.WPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="810" d:DesignWidth="710"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,7 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="#4f4f4f">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -36,7 +36,7 @@
         </materialDesign:DialogHost>
 
         <TextBlock x:Name="textBlockAnnouncer" Grid.Column="0" Grid.Row="0" Text="Liste des annonceurs" FontSize="21" TextAlignment="Center" VerticalAlignment="Center"/>
-        <ListBox x:Name="listBoxAnnouncers" Background="#6b6b6b" Grid.Row="1" Grid.Column="0" SelectionChanged="ListBoxAnnouncers_SelectionChanged" DisplayMemberPath="Name" 
+        <ListBox x:Name="listBoxAnnouncers" Background="#6b6b6b" Grid.Row="1" Grid.Column="0" DisplayMemberPath="Name" 
                  ItemsSource="{Binding Producers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProducer, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Background="#1DB954" Grid.Row="2" x:Name="addProducer" Margin="0,2.5,0,2.5" Click="AddProducer_Click">
             <Grid Width="150">
@@ -63,6 +63,11 @@
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
@@ -74,17 +79,27 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="textBoxName" Grid.Column="2" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Name, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox x:Name="textBoxOffers" Grid.Column="2" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.UserName, UpdateSourceTrigger=PropertyChanged}"/>
-            <Label Grid.Column="2" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ajouter offres :"/>
-            <TextBox x:Name="textBoxId" Grid.Column="2" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Identifier, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="textBoxPassword" Grid.Column="2" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Password, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxPassword" Grid.Column="2" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Password, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxAddress" Grid.Column="2" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Address, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxCity" Grid.Column="2" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.City, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxZipCode" Grid.Column="2" Grid.Row="5" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.ZipCode, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxFax" Grid.Column="2" Grid.Row="6" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Fax, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxPhone" Grid.Column="2" Grid.Row="7" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Phone, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxEmail" Grid.Column="2" Grid.Row="8" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxWebsiteAddress" Grid.Column="2" Grid.Row="9" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Text="{Binding SelectedProducer.WebsiteAddress, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom :"/>
-            <Label Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom d'utilisateur :"/>
-            <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="TBA :"/>
-            <Label Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Identifiant :"/>
-            <Label Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe :"/>
+            <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom* :"/>
+            <Label Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Nom d'utilisateur* :"/>
+            <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Mot de passe* :"/>
+            <Label Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Adresse* :"/>
+            <Label Grid.Column="0" Grid.Row="4" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Ville* :"/>
+            <Label Grid.Column="0" Grid.Row="5" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Code Postal*"/>
+            <Label Grid.Column="0" Grid.Row="6" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Fax :"/>
+            <Label Grid.Column="0" Grid.Row="7" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Tel :"/>
+            <Label Grid.Column="0" Grid.Row="8" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Email :"/>
+            <Label Grid.Column="0" Grid.Row="9" Background="#1DB954" Margin="0,2.5,0,2.5" VerticalAlignment="Center" Content="Site Web :"/>
 
-            <Button Background="#1DB954" Grid.Column="0" Grid.Row="7" x:Name="saveProducer" Margin="0,2.5,0,2.5" Click="SaveProducer_Click">
+            <Button Background="#1DB954" Grid.Column="0" Grid.Row="12" x:Name="saveProducer" Margin="0,2.5,0,2.5" Click="SaveProducer_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -98,7 +113,7 @@
                 </Grid>
             </Button>
 
-            <Button Background="#1DB954" Grid.Column="2" Grid.Row="7" x:Name="deleteProducer" Margin="0,2,0,2" Click="DeleteProducer_Click">
+            <Button Background="#1DB954" Grid.Column="2" Grid.Row="12" x:Name="deleteProducer" Margin="0,2,0,2" Click="DeleteProducer_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>

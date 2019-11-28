@@ -86,6 +86,27 @@ namespace MegaCasting.WPF
             ViewCustomer viewCustomer = new ViewCustomer();
             this.dockPanelMain.Children.Add(viewCustomer);
         }
+
+        private void JobBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            ViewJob viewJob = new ViewJob();
+            this.dockPanelMain.Children.Add(viewJob);
+        }
+
+        private void JobTypeBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            ViewJobType viewJobType = new ViewJobType();
+            this.dockPanelMain.Children.Add(viewJobType);
+        }
+
+        private void ContractTypeBoutton_Click(object sender, RoutedEventArgs e)
+        {
+            CleanPanel();
+            ViewContractType viewContractType = new ViewContractType();
+            this.dockPanelMain.Children.Add(viewContractType);
+        }
     }
 
     

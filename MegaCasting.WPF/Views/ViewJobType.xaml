@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MegaCasting.WPF.Views.ViewCustomer"
+﻿<UserControl x:Class="MegaCasting.WPF.Views.ViewJobType"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -35,10 +35,10 @@
             </Grid>
         </materialDesign:DialogHost>
 
-        <TextBlock x:Name="textBlockCustomers" Grid.Column="0" Grid.Row="0" FontSize="21" TextAlignment="Center" VerticalAlignment="Center"><Run Text="Liste des "/><Run Text="clients"/></TextBlock>
-        <ListBox x:Name="listBoxCustomers" Background="#6b6b6b" Grid.Row="1" Grid.Column="0" DisplayMemberPath="Name" 
-                 ItemsSource="{Binding Customers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedCustomer, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Background="#1DB954" Grid.Row="2" x:Name="addCustomer" Margin="0,2.5,0,2.5" Click="AddCustomer_Click">
+        <TextBlock x:Name="textBlockJobTypes" Grid.Column="0" Grid.Row="0" FontSize="14" TextAlignment="Center" VerticalAlignment="Center"><Run Text="Liste des Domaines de métiers"/></TextBlock>
+        <ListBox x:Name="listBoxJobTypes" Background="#6b6b6b" Grid.Row="1" Grid.Column="0" DisplayMemberPath="Name" 
+                 ItemsSource="{Binding JobTypes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedJobType, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Background="#1DB954" Grid.Row="2" x:Name="addJobType" Margin="0,2.5,0,2.5" Click="AddJobType_Click">
             <Grid Width="150">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -73,17 +73,11 @@
                 <ColumnDefinition Width="277*"></ColumnDefinition>
                 <ColumnDefinition Width="15"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="textBoxName" Grid.Column="3" Grid.Row="0" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedCustomer.Name, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox x:Name="textBoxOffers" Grid.Column="3" Grid.Row="1" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedCustomer.UserName, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="textBoxOxxx" Grid.Column="3" Grid.Row="2" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedCustomer.Password, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="textBoxPassword" Grid.Column="3" Grid.Row="3" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedCustomer.Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBoxName" Grid.Column="3" Grid.Row="0" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedJobType.Name, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,7" VerticalAlignment="Center" Content="Nom :" Grid.ColumnSpan="2"/>
-            <Label Grid.Column="0" Grid.Row="1" Background="#1DB954" Margin="0,7" VerticalAlignment="Center" Content="Nom d'utilisateur :" Grid.ColumnSpan="2"/>
-            <Label Grid.Column="0" Grid.Row="2" Background="#1DB954" Margin="0,7" VerticalAlignment="Center" Content="Mot de passe :" Grid.ColumnSpan="2"/>
-            <Label Grid.Column="0" Grid.Row="3" Background="#1DB954" Margin="0,7" VerticalAlignment="Center" Content="Email :" Grid.ColumnSpan="2"/>
 
-            <Button Background="#1DB954" Grid.Column="0" Grid.Row="7" x:Name="saveCustomer" Margin="0,3,0,2" Click="SaveCustomer_Click" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="278">
+            <Button Background="#1DB954" Grid.Column="0" Grid.Row="7" x:Name="saveJobType" Margin="0,3,0,2" Click="SaveJobType_Click" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="278">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -97,7 +91,7 @@
                 </Grid>
             </Button>
 
-            <Button Background="#1DB954" Grid.Column="3" Grid.Row="7" x:Name="deleteCustomer" Margin="0,3,0,2" Click="DeleteCustomer_Click">
+            <Button Background="#1DB954" Grid.Column="3" Grid.Row="7" x:Name="deleteJobType" Margin="0,3,0,2" Click="DeleteJobType_Click">
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -112,5 +106,4 @@
             </Button>
         </Grid>
     </Grid>
-
 </UserControl>

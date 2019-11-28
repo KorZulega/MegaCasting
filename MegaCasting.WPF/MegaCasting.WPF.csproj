@@ -74,14 +74,26 @@
     </ApplicationDefinition>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelViewContractType.cs" />
     <Compile Include="ViewModels\ViewModelViewAnnouncement.cs" />
     <Compile Include="ViewModels\ViewModelViewCustomer.cs" />
+    <Compile Include="ViewModels\ViewModelViewJob.cs" />
+    <Compile Include="ViewModels\ViewModelViewJobType.cs" />
     <Compile Include="ViewModels\ViewModelViewProducer.cs" />
     <Compile Include="Views\ViewAnnouncement.xaml.cs">
       <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewContractType.xaml.cs">
+      <DependentUpon>ViewContractType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewCustomer.xaml.cs">
       <DependentUpon>ViewCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewJob.xaml.cs">
+      <DependentUpon>ViewJob.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewJobType.xaml.cs">
+      <DependentUpon>ViewJobType.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewProducer.xaml.cs">
       <DependentUpon>ViewProducer.xaml</DependentUpon>
@@ -105,7 +117,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewContractType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewJob.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewJobType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,9 +172,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressource\image.png">
+    <EmbeddedResource Include="Ressource\image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">

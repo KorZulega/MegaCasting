@@ -72,7 +72,7 @@
                             Click="ButtonExit_Click">
                         <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Close" Background="#1DB954"/>
                     </Button>
-                    
+
                 </StackPanel>
             </Grid>
 
@@ -109,7 +109,7 @@
             <TextBlock Background="#1DB954" Grid.Row="0" Text="Mega Casting"  FontFamily="Visitor TT1 BRK" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button Background="#1DB954" Grid.Row="1" x:Name="annonceurBoutton" Margin="0,2.5,0,2.5" Click="AnnonceurBoutton_Click">
-                
+
                 <Grid Width="170">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="5*"/>
@@ -139,7 +139,7 @@
 
                 </Grid>
             </Button>
-            
+
 
             <Button Background="#1DB954" Grid.Row="3" x:Name="clientBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
                 <Grid Width="170">
@@ -155,21 +155,25 @@
                 </Grid>
             </Button>
 
-            <Button Background="#1DB954" Grid.Row="5" x:Name="jobBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+            <Button Background="#1DB954" Grid.Row="5" x:Name="jobBoutton" Margin="0,2.5,0,2.5" Click="JobBoutton_Click">
                 <Grid Width="170">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="11*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Hammer"/>
+                    <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Hammer" Margin="7,4,7,1.895"/>
 
-                    <Label Height="30" Grid.Column="1" Content="Métiers"></Label>
+                    <Label Height="30" Grid.Column="1" Content="Métiers" Margin="0,0,0,-6" Grid.RowSpan="2"></Label>
 
                 </Grid>
             </Button>
 
-            <Button Background="#1DB954" Grid.Row="6" x:Name="jobTypeBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+            <Button Background="#1DB954" Grid.Row="6" x:Name="jobTypeBoutton" Margin="0,2.5,0,2.5" Click="JobTypeBoutton_Click">
                 <Grid Width="170">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -183,7 +187,7 @@
                 </Grid>
             </Button>
 
-            <Button Background="#1DB954" Grid.Row="7" x:Name="contractTypeBoutton" Margin="0,2.5,0,2.5" Click="ClientsBoutton_Click">
+            <Button Background="#1DB954" Grid.Row="7" x:Name="contractTypeBoutton" Margin="0,2.5,0,2.5" Click="ContractTypeBoutton_Click">
                 <Grid Width="170">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"></ColumnDefinition>
