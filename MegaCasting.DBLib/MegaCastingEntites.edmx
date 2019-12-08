@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="Identifier" />
           </Key>
-          <Property Name="Identifier" Type="bigint" Nullable="false" />
+          <Property Name="Identifier" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="Identifier" />
           </Key>
-          <Property Name="Identifier" Type="bigint" Nullable="false" />
+          <Property Name="Identifier" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IdentifierJobType" Type="bigint" Nullable="false" />
         </EntityType>
