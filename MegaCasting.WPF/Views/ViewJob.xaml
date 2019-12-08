@@ -75,7 +75,7 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="textBoxName" Grid.Column="3" Grid.Row="0" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center" Text="{Binding SelectedJob.Name, UpdateSourceTrigger=PropertyChanged}" />
             <ComboBox x:Name="comboBoxJobTypes" Grid.Column="3" Grid.Row="1" Background="#1DB954" Margin="0,8,0,7" VerticalAlignment="Center"  DisplayMemberPath="Name"
-                 ItemsSource="{Binding JobTypes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedJobType, UpdateSourceTrigger=PropertyChanged}">
+                 ItemsSource="{Binding JobTypes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedJobType, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding SelectedJob.JobType, UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="0" Background="#1DB954" Margin="0,7" VerticalAlignment="Center" Content="Nom du métier :" Grid.ColumnSpan="2"/>

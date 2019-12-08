@@ -52,7 +52,10 @@ namespace MegaCasting.WPF.Views
         /// <param name="e"></param>
         private void DeleteJob_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelViewJob)this.DataContext).DeleteJob();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Etes-vous sûr de vouloir supprimer l'élément ?", "Confirmation de suppression", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            { ((ViewModelViewJob)this.DataContext).DeleteJob(); }
+                
         }
 
         /// <summary>

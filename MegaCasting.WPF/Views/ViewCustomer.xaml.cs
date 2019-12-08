@@ -59,7 +59,9 @@ namespace MegaCasting.WPF.Views
         /// <param name="e"></param>
         private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelViewCustomer)this.DataContext).DeleteCustomer();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Etes-vous sûr de vouloir supprimer l'élément ?", "Confirmation de suppression", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            { ((ViewModelViewCustomer)this.DataContext).DeleteCustomer(); }
         }
 
         /// <summary>

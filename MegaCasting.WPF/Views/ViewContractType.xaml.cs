@@ -54,7 +54,10 @@ namespace MegaCasting.WPF.Views
         /// <param name="e"></param>
         private void DeleteContractType_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelViewContractType)this.DataContext).DeleteContractType();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Etes-vous sûr de vouloir supprimer l'élément ?", "Confirmation de suppression", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            { ((ViewModelViewContractType)this.DataContext).DeleteContractType(); }
+
         }
 
         /// <summary>

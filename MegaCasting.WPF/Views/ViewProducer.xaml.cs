@@ -78,7 +78,9 @@ namespace MegaCasting.WPF.Views
         /// <param name="e"></param>
         private void DeleteProducer_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelViewProducer)this.DataContext).DeleteProduter();
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Etes-vous sûr de vouloir supprimer l'élément ?", "Confirmation de suppression", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            { ((ViewModelViewProducer)this.DataContext).DeleteProduter(); }
         }
         /// <summary>
         /// Evènement type "click" déclenchant la méthode SaveProducer
