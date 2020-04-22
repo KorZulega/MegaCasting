@@ -34,8 +34,11 @@ namespace MegaCasting.WPF.Views
 
         private void ConfirmDeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelViewConfirmDelete)this.DataContext).ConfirmDelete();
-            Environment.Exit(0);
+            
+            
+            MainWindow window = new MainWindow();
+            window.Show();
+            
         }
     }
 }

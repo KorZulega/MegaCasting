@@ -76,6 +76,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelViewConfirmDelete.cs" />
     <Compile Include="ViewModels\ViewModelViewContractType.cs" />
@@ -84,11 +87,12 @@
     <Compile Include="ViewModels\ViewModelViewJob.cs" />
     <Compile Include="ViewModels\ViewModelViewJobType.cs" />
     <Compile Include="ViewModels\ViewModelViewProducer.cs" />
+    <Compile Include="ViewModels\ViewModelViewAccount.cs" />
     <Compile Include="Views\ViewAnnouncement.xaml.cs">
       <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewConfirmDelete.xaml.cs">
-      <DependentUpon>ViewConfirmDelete.xaml</DependentUpon>
+    <Compile Include="Views\ViewLogin.xaml.cs">
+      <DependentUpon>ViewLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewContractType.xaml.cs">
       <DependentUpon>ViewContractType.xaml</DependentUpon>
@@ -108,6 +112,10 @@
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
     </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,7 +132,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewConfirmDelete.xaml">
+    <Page Include="Views\ViewLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,6 +26,7 @@ namespace MegaCasting.WPF
             InitializeComponent();
             this.Height = 730;
             this.Width = 900;
+            
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)

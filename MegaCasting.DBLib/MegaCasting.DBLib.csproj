@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>MegaCastingEntites.tt</DependentUpon>
+    </Compile>
     <Compile Include="ContractType.cs">
       <DependentUpon>MegaCastingEntites.tt</DependentUpon>
     </Compile>

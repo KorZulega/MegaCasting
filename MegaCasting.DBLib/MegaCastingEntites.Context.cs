@@ -31,5 +31,6 @@ namespace MegaCasting.DBLib
         public virtual DbSet<JobType> JobTypes { get; set; }
         public virtual DbSet<Offer> Offers { get; set; }
         public virtual DbSet<Producer> Producers { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
     }
 }
